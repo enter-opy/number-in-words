@@ -48,7 +48,7 @@ powers = [
     'decillion',
     'undecillion',
     'duodecillion',
-    'tredecillion'
+    'tredecillion',
     'quattuordecillion',
     'quindecillion',
     'sexdecillion',
