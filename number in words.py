@@ -73,38 +73,36 @@ powers = [
 def three_digits(number):
     string = ""
 
-    if (number // 100 != 0):
-        string = string + digits[number // 100] + ' hundred '
+    if number // 100 != 0: string = string + digits[number // 100] + ' hundred '
 
-    if (number // 10 % 10 == 1):
-        string = string + teens[number % 10] + ' '
-    elif (number // 10 % 10 > 1):
+    if number // 10 % 10 == 1: string = string + teens[number % 10] + ' '
+    
+    elif number // 10 % 10 > 1:
         string = string + tens[number // 10 % 10 - 2] + ' '
-        if (number % 10 > 0):
-            string = string + digits[number % 10] + ' '
-    elif (number % 10 > 0):
-        string = string + digits[number % 10] + ' '
+        if number % 10 > 0: string = string + digits[number % 10] + ' '
+    
+    elif number % 10 > 0: string = string + digits[number % 10] + ' '
     
     return string
 
 def main():
-    number = int(input('Enter the number here: '))
-    string = ""
+    try:
+        number = int(input('Enter the number here: '))
+        string = ""
 
-    if number == 0:
-        print(digits[0])
-
-    else:
-        try:
-            i = 0
-            while(number != 0):
-                string = three_digits(number % 1000) + powers[i] + ' ' + string + ' '
-                number = number // 1000
-                i += 1
-        
-            print(string)
-        except:
-            print('Number too large')
+        if number == 0:
+            print(digits[0])
+        else:
+            try:
+                i = 0
+                while(number != 0):
+                    string = three_digits(number % 1000) + powers[i] + ' ' + string + ' '
+                    number = number // 1000
+                    i += 1
+            
+                print(string)
+            except: print('Number too large')
+    except: print('Invalid number')
 
 if __name__ == '__main__':
     main()
