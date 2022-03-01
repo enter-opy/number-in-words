@@ -91,7 +91,8 @@ def main():
         string = ""
 
         if number == 0:
-            print(digits[0])
+            string = digits[0]
+            print(string)
         else:
             try:
                 i = 0
